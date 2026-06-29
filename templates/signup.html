@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="max-width: 500px;">
+    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" class="web-img" alt="Join Us">
+    <h2 style="margin-bottom: 1.5rem;">Create Your Account</h2>
+    <form action="/signup" method="POST">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="John Doe" required>
+        
+        <div style="display: flex; gap: 10px; margin-top: 1rem;">
+            <div style="flex: 1;">
+                <label>Age</label>
+                <input type="number" name="age" required>
+            </div>
+            <div style="flex: 1;">
+                <label>Gender</label>
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="email@example.com" required>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-primary" style="margin-top: 2rem;">Register Now</button>
+    </form>
+    <p style="margin-top: 20px; text-align: center; color: #666;">
+        Already have an account? <a href="/login" style="color: var(--primary); text-decoration: none; font-weight: 600;">Login here</a>
+    </p>
+</div>
+{% endblock %}

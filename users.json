@@ -1,0 +1,20 @@
+{
+    "sanabadagan@gmail.com": {
+        "name": "Dr. Sadaf Idrees",
+        "age": "30",
+        "gender": "Male",
+        "password": "1234"
+    },
+    "sonuk4079@gmail.com": {
+        "name": "Sonu Kumar",
+        "age": "38",
+        "gender": "Male",
+        "password": "12345678"
+    },
+    "abhinitk123@gmail.com": {
+        "name": "Abhinit Kumar",
+        "age": "20",
+        "gender": "Male",
+        "password": "Abhinit@1234"
+    }
+}

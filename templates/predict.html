@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" class="web-img" alt="Heart Health">
+    <h2>Heart Disease Risk Assessment</h2>
+    <p>Please enter the clinical parameters below:</p>
+
+    <form action="/predict" method="POST" class="grid-form">
+        <div>
+            <label>Age</label>
+            <input type="number" name="age" required>
+        </div>
+        <div>
+            <label>Sex</label>
+            <select name="sex">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+        </div>
+        <div>
+            <label>Chest Pain Type (0-3)</label>
+            <select name="cp">
+                <option value="0">Typical Angina</option>
+                <option value="1">Atypical Angina</option>
+                <option value="2">Non-anginal Pain</option>
+                <option value="3">Asymptomatic</option>
+            </select>
+        </div>
+        <div>
+            <label>Resting Blood Pressure</label>
+            <input type="number" name="trestbps" placeholder="e.g. 120" required>
+        </div>
+        <div>
+            <label>Cholesterol</label>
+            <input type="number" name="chol" placeholder="e.g. 200" required>
+        </div>
+        <div>
+            <label>Fasting Blood Sugar > 120 mg/dl</label>
+            <select name="fbs">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div>
+            <label>Resting ECG Results</label>
+            <select name="restecg">
+                <option value="0">Normal</option>
+                <option value="1">ST-T Wave Abnormality</option>
+                <option value="2">Left Ventricular Hypertrophy</option>
+            </select>
+        </div>
+        <div>
+            <label>Max Heart Rate (Thalach)</label>
+            <input type="number" name="thalach" required>
+        </div>
+        <div>
+            <label>Exercise Induced Angina</label>
+            <select name="exang">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div>
+            <label>ST Depression (Oldpeak)</label>
+            <input type="number" step="0.1" name="oldpeak" required>
+        </div>
+        <div>
+            <label>Slope of Peak Exercise ST</label>
+            <select name="slope">
+                <option value="0">Upsloping</option>
+                <option value="1">Flat</option>
+                <option value="2">Downsloping</option>
+            </select>
+        </div>
+        <div>
+            <label>Major Vessels (0-3)</label>
+            <input type="number" name="ca" min="0" max="3" required>
+        </div>
+        <div style="grid-column: span 2;">
+            <label>Thalassemia</label>
+            <select name="thal">
+                <option value="1">Normal</option>
+                <option value="2">Fixed Defect</option>
+                <option value="3">Reversable Defect</option>
+            </select>
+        </div>
+        <button type="submit" class="btn-primary" style="grid-column: span 2;">Analyze Risk</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result-box {{ prediction }}">
+        <h3>Result: {{ prediction }}</h3>
+        <p>Confidence: {{ probability }}%</p>
+        <div style="margin-top: 15px;">
+            <strong>Recommended Foods:</strong>
+            <p>{{ foods|join(", ") }}</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

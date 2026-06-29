@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card" style="max-width: 450px; margin-top: 5rem;">
+    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80" class="web-img" alt="Secure Login">
+    <h2 style="margin-bottom: 1rem;">Sign In</h2>
+    <p style="color: #888; margin-bottom: 2rem;">Please enter your credentials to access the dashboard.</p>
+    
+    <form action="/login" method="POST">
+        <div style="margin-bottom: 1.5rem;">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="••••••••" required>
+        </div>
+        
+        <button type="submit" class="btn-primary">Login to Account</button>
+    </form>
+    
+    <div style="margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; text-align: center;">
+        <p>New here? <a href="/signup" style="color: var(--secondary); text-decoration: none; font-weight: 600;">Create an Account</a></p>
+    </div>
+</div>
+{% endblock %}

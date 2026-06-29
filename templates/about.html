@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" class="web-img" style="height: 400px;" alt="About AI">
+    
+    <h1 style="margin-bottom: 1.5rem; color: var(--primary);">About Cardiovascular Disease Prediction</h1>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #444; margin-bottom: 2rem;">
+        Cardiovascular Disease Prediction is a cutting-edge diagnostic tool designed to bridge the gap between complex medical data and personal health awareness. Our platform uses <strong>Random Forest Machine Learning</strong> models trained on clinical datasets to predict the probability of cardiovascular issues based on 13 key physiological factors.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+        <div style="padding: 20px; background: #f0f7ff; border-radius: 15px;">
+            <h3 style="color: var(--secondary); margin-bottom: 10px;">The Technology</h3>
+            <p>We utilize robust data scaling and ensemble learning techniques to ensure high accuracy. By analyzing variables like cholesterol, heart rate, and ST-segment depression, we provide a data-backed risk score.</p>
+        </div>
+        <div style="padding: 20px; background: #fff5f6; border-radius: 15px;">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Our Mission</h3>
+            <p>Our goal is to empower users with early-detection capabilities. While this is not a replacement for a doctor, it serves as a powerful first-step indicator for potential health concerns.</p>
+        </div>
+    </div>
+
+    <div style="margin-top: 3rem; text-align: center; border-top: 1px solid #eee; padding-top: 2rem;">
+        <p style="font-style: italic; color: #777;">Developed using Flask, Scikit-Learn, and Modern Web Standards.</p>
+    </div>
+</div>
+{% endblock %}
